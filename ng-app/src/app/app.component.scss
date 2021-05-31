@@ -1,0 +1,68 @@
+@import 'RedHat.scss', 'gafataFont';
+
+@mixin gradient($color1, $color2){
+	background-image: linear-gradient(-47.5deg, $color1, $color2);
+}
+
+header{
+	font-family: "Red Hat Display";
+	font-size: 2em;
+	font-weight: 900;
+	padding: 10px;
+	@include gradient(#747a8b, #6970a0);
+	padding-bottom: 0;
+	ul {
+		display: flex;
+		justify-content: flex-start;
+		padding-left: 5px;
+		padding-right: 5px;
+		overflow: scroll;
+	}
+	ul>li{
+		color: white;
+		font-family: gafata, serif;
+		text-transform: uppercase;
+		font-size: 0.5em;
+		font-weight: 500;
+		margin-right: 15px;
+		white-space: nowrap;
+		height: 25px;
+		padding: 3px;
+		padding-bottom: 0;
+		border-radius: 10px 10px 0 0;
+		&:hover, &:active, &:focus{
+			background-color: #110f0f;
+			opacity: 0.5;
+		}
+	}
+	
+	ul>li:last-of-type{
+		margin-right: 0;
+	}
+	
+	
+	div{
+		outline: 1px solid blue;
+		display: flex;
+		justify-content: flex-end;
+		align-items: center;
+		margin-bottom: 20px;
+		min-width: 320px;
+		text-shadow: hsla(0,0,0, .3) 1px 1px;
+		 span{
+		 	margin-right: calc(100vw - 230px);
+		 }
+
+		 i:first-of-type{
+		 		font-size: 18px;
+		 }
+		 i:last-child{
+		 		font-size: 42px;
+		 }
+	}
+}
+
+
+
+
+	

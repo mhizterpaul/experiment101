@@ -5,6 +5,17 @@ import { Component } from '@angular/core';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
+
 export class AppComponent {
   title = 'ng-app';
+	navEls: Array<string>;
+	constructor(){
+	this.navEls = [
+		'home',
+		'community',
+		'book-repository',
+		'classified',
+		'courses'
+		];
+ }
 }
