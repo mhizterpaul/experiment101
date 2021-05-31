@@ -27,12 +27,10 @@ header{
 		margin-right: 15px;
 		white-space: nowrap;
 		height: 25px;
-		padding: 3px;
-		padding-bottom: 0;
+		padding: 6px;
 		border-radius: 10px 10px 0 0;
 		&:hover, &:active, &:focus{
-			background-color: #110f0f;
-			opacity: 0.5;
+			background-color: hsla(0, 6%, 6%, .5);
 		}
 	}
 	
@@ -50,14 +48,20 @@ header{
 		min-width: 320px;
 		text-shadow: hsla(0,0,0, .3) 1px 1px;
 		 span{
-		 	margin-right: calc(100vw - 230px);
+		 	margin-right: calc(100vw - 215px);
+		 	color: white;
 		 }
 
 		 i:first-of-type{
 		 		font-size: 18px;
+		 		background-color: #ffffff;
+		 		color: transparent;
+		 		opacity: 3;
 		 }
 		 i:last-child{
 		 		font-size: 42px;
+		 		color: #ffffff;
+		 		opacity: 0.9;
 		 }
 	}
 }
