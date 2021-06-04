@@ -1,8 +1,9 @@
-@import 'RedHat.scss', 'gafataFont';
+@import 'RedHat.scss', 'gafataFont', 'XanhMono.scss';
+
 
     /*   ******HEADER******* */
-@mixin gradient($color1, $color2){
-	background-image: linear-gradient(-47.5deg, $color1, $color2);
+@mixin gradient($to, $color1, $color2){
+	background-image: linear-gradient($to, $color1, $color2);
 }
 
 header{
@@ -10,25 +11,10 @@ header{
 	font-size: 2em;
 	font-weight: 900;
 	padding: 10px;
-	@include gradient(#747a8b, #6970a0);
+	@include gradient(-47.5deg, #1c2690, #5f6ae0);
 	padding-bottom: 0;
-	box-shadow: inset 0 0 0 4px rgba(0, 6, 6, .5);
-	ul {
-		display: flex;
-		justify-content: flex-start;
-		padding-left: 5px;
-		padding-right: 5px;
-		overflow: scroll;
-		scrollbar-width: thin;
-		::-webkit-scrollbar {
-		  width: 5px;
-		  height: 8px;
-		  background-color: #aaa;
-   }
-   ::-webkit-scrollbar-thumb {
-     background: hsla(0%, 7%, 7%, .5);
-   }
-	}
+	box-shadow: inset 0 0 0 2px rgba(0, 6, 6, .2);
+	
 	ul>li{
 		color: white;
 		font-family: gafata, serif;
@@ -41,7 +27,7 @@ header{
 		padding: 6px;
 		border-radius: 10px 10px 0 0;
 		&:hover, &:active, &:focus{
-			background-color: hsla(0%, 6%, 6%, .5);
+			background-color: hsla(0, 6%, 6%, .5);
 		}
 	}
 	
@@ -50,25 +36,17 @@ header{
 	}
 	
 	div{
-		outline: 1px solid blue;
 		display: flex;
 		justify-content: flex-end;
 		align-items: center;
 		margin-bottom: 20px;
 		min-width: 320px;
-		text-shadow: hsla(0%,0%,0%, .3) 1px 1px;
+		text-shadow: hsla(0, 0, 0, .3) 1px 1px;
 		 span{
-		 	margin-right: calc(100vw - 215px);
+		 	margin-right: calc(100vw - 8em);
 		 	color: white;
 		 }
-		 
-		i{
-		  position: sticky;
-		  top: 2em;
-		  @each $item in bottom, left, right { 
-		  	 $item: auto;
-		 }
-		 }
+	
 		 i:first-of-type{
 		 		font-size: 18px;
 		 		background-color: #ffffff;
@@ -82,10 +60,229 @@ header{
 		 }
 	}
 }
+/*  ******* SLIDER ******** */
+	ul.navigation, section.testimonials{
+		display: flex;
+		justify-content: flex-start;
+		align-items: center;
+		padding-left: 5px;
+		padding-right: 5px;
+		overflow-x: scroll;
+		scrollbar-width: thin;
+	}
+	
+/*    ***** SCROLLBAR****** */
+	ul::-webkit-scrollbar, section.testimonials::-webkit-scrollbar{
+		display:none;
+	}
+	ul::-webkit-scrollbar:hover, ul::-webkit-scrollbar:active, section.testimonials::-webkit-scrollbar:hover, section.testimonials::-webkit-scrollbar:active{
+		display: block;
+	}
+	
+	ul::-webkit-scrollbar-thumb, section.testimonials::-webkit-scrollbar-thumb{
+		width: 8px;
+		height: 2px;
+		border-radius: 3px;
+  }
+  ul::-webkit-scrollbar-button, section.testimonials::-webkit-scrollbar-button{
+  	display:none;
+  }
+  ul::-webkit-scrollbar-track-piece, section.testimonials::-webkit-scrollbar-track-piece{
+  		color: transparent;
+  		background-color: transparent;
+  }
 
   /* **********BANNER***********    */
-.banner{
-	
+  
+div.background_color{
+		background-image: linear-gradient(to bottom, #5f6ae0 25%, #ffffff);
+		padding: 10px 5px;	
+	 section.banner{
+	  	height: 225px;
+	  	width: 100%;
+	  	color: orange;
+	  	background-image: linear-gradient(to bottom, #5f6ae0 25%, #ffffff), ;
+	  	background: url(../assets/banner.jpg)  center/cover border-box no-repeat;
+	  	background-blend-mode: darken;
+	  	border-radius: 20px;
+	  	path {
+      fill: transparent;
+    }
+    text {
+      fill: #FF9800;
+     }
+     textPath{
+     	 font-family: 'Xanh Mono';
+     	 font-size: 3em;
+     	 //transform: rotateZ(45deg);
+     	 //display: inline-block;
+    	 //tranform: rotate(90deg);
+     }
+	  }
+	  
+	  
+ } 
+  
+  
+  
+  /* ******* MAIN *************** */
+  
+section.main{
+	h1{
+		font-family: gafata;
+		font-weight: bold;
+		font-size: 2em;
+		margin: 20px;
+  	margin-top: 70px;
+  	text-align: center;
+	}
+	>div{
+		margin: 0 auto;
+		//background-color: yellow;
+	}
+	>div>div {
+		margin: 75px auto 0 auto;
+		width: 100vw;
+		max-width: 320px;
+		min-width: 250px;
+		height: 200px;
+		//outline: 1px solid black;
+		text-align: center;
+		vertical-align: middle;
+		border-radius: 10px;
+		//box-shadow: 0 3px 3px 3px #cc41423f;
+		padding: 20px;
+		font-size: 1em;
+		color: gray;
+		h2{
+			font-family: gafata;
+			font-size: 1em;
+			font-weight: 500;
+		}
+		
+		button{
+			margin-top: 20px;
+			display: block;
+	  	margin-left: auto;
+  		margin-right: auto;
+		}
+		button::before{
+			content: "⟶";
+			font-size: 2em;
+		}
+		
+		img{
+			width: 100px;
+			height: 100px;
+			display: block;
+			border-radius: 50%;
+			shape-outside: circle(50px at center);
+		}
+		
+ }
+ section.testimonials{
+ 	padding: 20px 40px;
+ 	h1{
+ 		margin: 0 100px 0 0;
+ 	}
+ 	margin: 150px 0;
+ 	>*{
+ 		margin-right: 100px;
+ 		flex: 0 0 200px;
+ 	}
+ }
+ 
+ 
+ .left {
+			float: left;
+		}
+	.right {
+			float: right;
+		}
+		.uppercase {
+			text-transform: uppercase;
+		}
+		.lowercase {
+			text-transform: lowercase;
+		}
+		
+		img.right {
+			box-shadow: 0 3px 3px 0 #cc41423f;
+		}
+		
+		img.left {
+			box-shadow: 0 3px 3px 0 #cc41423f;
+		}
+		/*div.left p{
+			box-shadow: 2px 0 2px 2px #cc41423f;
+		}
+		div.right p{
+			box-shadow: 0px 2px 2px 0px #cc41423f;
+		}*/
 }
 
-	
+/*    ********CALL TO ACTION****** */
+
+section.call_to_action{
+	background-color: gray;
+	text-align: center;
+	padding: 50px 0;
+}
+
+
+/*  ************FOOTER*********** */
+footer{
+	background: black;
+	color: white;
+	text-align: center;
+	padding: 50px 0;
+	>*{
+		margin: 20px auto;
+	}
+	div.action:not(:focus):not(:active){
+		display: none;
+	}
+	div.action:focus, div.action:hover{
+		display: block;
+	}
+}
+  /* ********MISCELLANEOUS******* */
+
+h2{
+	margin-bottom: 20px;
+	color: orange;
+}
+
+.banner svg {
+	display: inline-block;
+	position: relative;
+	left: 32%;
+	top: 5%;
+	padding: 0;
+	margin: 0;
+	width: 250px;
+	height: 250px;
+}
+
+ section.main>section.call_to_action>div{
+	display: block;
+	margin: 20px auto;
+	button{
+		margin: 0 10px;
+	}
+}
+
+section.main>h1{
+	margin-top: 50px;
+	clear: left;
+	transform: translateY(90px);
+}
+
+div.left:last-of-type img{
+	margin-right: 5px;
+}
+
+button.postive{
+	vertical-align: center;
+	text-align: center;
+}
