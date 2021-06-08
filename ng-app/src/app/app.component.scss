@@ -98,26 +98,17 @@ div.background_color{
 		background-image: linear-gradient(to bottom, #5f6ae0 25%, #ffffff);
 		padding: 10px 5px;	
 	 section.banner{
-	  	height: 225px;
+	  	height: 40vh;
 	  	width: 100%;
 	  	color: orange;
 	  	background-image: linear-gradient(to bottom, #5f6ae0 25%, #ffffff), ;
-	  	background: url(../assets/banner.jpg)  center/cover border-box no-repeat;
+	  	background: url(../assets/banner.jpg), linear-gradient(to bottom, #5f6ae0 25%, #ffffff);
+	  	background-origin: border-box;
+	  	background-size: cover;
+	  	background-position: center;
+	  	background-repeat: no-repeat;
 	  	background-blend-mode: darken;
 	  	border-radius: 20px;
-	  	path {
-      fill: transparent;
-    }
-    text {
-      fill: #FF9800;
-     }
-     textPath{
-     	 font-family: 'Xanh Mono';
-     	 font-size: 3em;
-     	 //transform: rotateZ(45deg);
-     	 //display: inline-block;
-    	 //tranform: rotate(90deg);
-     }
 	  }
 	  
 	  
@@ -138,12 +129,11 @@ section.main{
 	}
 	>div{
 		margin: 0 auto;
-		//background-color: yellow;
+		
 	}
 	>div>div {
 		margin: 75px auto 0 auto;
 		width: 100vw;
-		max-width: 320px;
 		min-width: 250px;
 		height: 200px;
 		//outline: 1px solid black;
@@ -253,17 +243,6 @@ h2{
 	color: orange;
 }
 
-.banner svg {
-	display: inline-block;
-	position: relative;
-	left: 32%;
-	top: 5%;
-	padding: 0;
-	margin: 0;
-	width: 250px;
-	height: 250px;
-}
-
  section.main>section.call_to_action>div{
 	display: block;
 	margin: 20px auto;
@@ -285,4 +264,8 @@ div.left:last-of-type img{
 button.postive{
 	vertical-align: center;
 	text-align: center;
+}
+
+footer button{
+	padding-right: 20px;
 }
